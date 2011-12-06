@@ -8,7 +8,9 @@ class Posts < ActiveRecord::Base
 end
 
 get '/' do
-  @posts = Posts.find(:all, :conditions => { :cats_id => 1 })
+  @postnew = Posts.find(:all, :conditions => { :cats_id => 1 })
+  @postpic = Posts.find(:all, :conditions => { :cats_id => 2 })
+  @postvideo = Posts.find(:all, :conditions => { :cats_id => 3 })
   erb :index
 end
 

@@ -1,5 +1,25 @@
-<h1>
-	<% @posts.each do |post| %>
-		<%= post.title %>
+<div class="news" style="background-color:red">
+<ul>
+	<% @postnew.each do |pn| %>
+		<li><%= pn.title %></li>
 	<% end %>
-</h1>
+</ul>
+</div>
+
+<div class="pic" style="background-color:green">
+<ul>
+	<% @postpic.each do |pp| %>
+		<li><%= pp.title %></li>
+		<img src="<%= pp.pic %>">
+	<% end %>
+</ul>
+</div>
+
+<div class="video" style="background-color:bule">
+<ul>
+	<% @postvideo.each do |pv| %>
+		<li><%= pv.title %><%= pv.video %></li>
+		
+	<% end %>
+</ul>
+</div>

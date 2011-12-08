@@ -14,6 +14,11 @@ get '/' do
   erb :index
 end
 
+get '/post/:id' do
+  post = Posts.find(params[:id])
+  post.title
+end
+
 post '/' do
   @post = Posts.new do |p|
     p.title = params[:title]

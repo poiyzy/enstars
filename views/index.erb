@@ -1,7 +1,7 @@
 <div class="news" style="background-color:red">
 <ul>
 	<% @postnew.each do |pn| %>
-		<li><%= pn.title %></li>
+		<li><a href="/post/<%= pn.id %>"><%= pn.title %></a></li>
 	<% end %>
 </ul>
 </div>
@@ -9,7 +9,7 @@
 <div class="pic" style="background-color:green">
 <ul>
 	<% @postpic.each do |pp| %>
-		<li><%= pp.title %></li>
+		<li><a href="/post/<%= pp.id %>"><%= pp.title %></a></li>
 		<img src="<%= pp.pic %>">
 	<% end %>
 </ul>
@@ -18,7 +18,7 @@
 <div class="video" style="background-color:bule">
 <ul>
 	<% @postvideo.each do |pv| %>
-		<li><%= pv.title %><%= pv.video %></li>
+		<li><a href="/post/<%= pv.id %>"><%= pv.title %></a><%= pv.video %></li>
 		
 	<% end %>
 </ul>

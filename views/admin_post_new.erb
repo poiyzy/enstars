@@ -28,19 +28,68 @@
     <table cellpadding="0" cellspacing="0" border="0" width="100%" class="dual">
         <tr>
             <td width="auto" class="dual_left" valign="top"><div class="inner">
-<h1>文章列表</h1>
+<h1>新建文章</h1>
 <div class="sep20"></div>
 
 <div id="projects">
 
-<% @post.each do |p| %>
-<div class="project_box" id="p_231"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="32" valign="top" align="center"></td><td valign="top" align="left"><h2><a href="/project/mytest"><%= p.title %></a></h2><div class="sep10"></div><small class="gray"><%= p.created_at %></small></td><td valign="top" width="60" align="right"><input type="button" class="super normal button" value="修改" onclick="location.href='/projects/new'" /></td><td valign="top" align="right" width="60"><input type="button" class="super normal button" value="删除" onclick="location.href='/projects/new'" /></td></tr></table></div>
-<% end %>
+<div class="project_box" id="p_231"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+	   <td width="auto" class="dual_left" valign="top"><div class="inner">
+			<div class="sep20"></div>
+			<form action="/admin" method="post">
+				<table cellpadding="4" cellspacing="0" border="0" width="100%">
+	    			<tr>
+	        			<td width="120" align="right" valign="middle">文章标题</td>
+	        			<td width="auto"><span class="mono"></span> <input type="text" name="title" class="sl" value="" maxlength="32" style="width: 220px;" /></td>
+	    			</tr>
+	    			<tr>
+	        			<td width="120" align="right" valign="middle"></td>
+	        			<td width="auto"><span class="gray f12">项目代号只能使用半角的 a-z 和阿拉伯数字 0-9，全小写。项目代号将会出现在 URL 及文件夹名中。</span></td>
+	    			</tr>
+	    			<tr>
+	        			<td width="120" align="right" valign="middle">图片链接地址</td>
+	        			<td width="auto"><input type="text" name="pic" class="sl" value="" /></td>
+	    			</tr>
+					<tr>
+	        			<td width="120" align="right" valign="middle">视频链接地址</td>
+	        			<td width="auto"><input type="text" name="video" class="sl" value="" /></td>
+	    			</tr>
+	    			<tr>
+	        			<td width="120" align="right" valign="middle">文章分类</td>
+	        			<td width="auto"><select name="cats_id">
+							<option value="0">未分类</option>
+	            			<option value="1">新闻</option>
+	            			<option value="2">图片新闻</option>
+	            			<option value="3">视频</option>
+	        			</select></td>
+	    			</tr>
+	    			<tr>
+	        			<td width="120" align="right" valign="middle">文章内容</td>
+	        			<td width="auto"><textarea name="content" class="ml" rows="15"></textarea></td>
+	    			</tr>
+	    			<tr>
+	        			<td width="120" align="right" valign="middle"></td>
+	        			<td width="auto"></td>
+	    			</tr>
+	    			<tr>
+	        			<td width="120" align="right" valign="middle"></td>
+	        			<td width="auto"><input type="submit" class="super normal button" value="提交" /></td>
+	    			</tr>
+				</table>
+			</form>
+
+	<div class="sep"></div>
+	<div class="sep5"></div>
+	<ul class="tips"><li><strong>项目代号</strong> &nbsp;<span class="secondary">项目代号将会出现在诸如 URL，文件夹和邮件地址这样的地方，因此请使用一个简短且容易记忆的名字，只能使用字母和数字（正则表达式规则 [a-z0-9]{1,32}）。该名字被保存到系统中会是全小写形式。</span><div class="sep10"></div></li><li><strong>项目名称</strong> &nbsp;<span class="secondary">项目的正式名字，可以使用 32 个任意字符。</span><div class="sep10"></div></li><li><strong>产品类型</strong> &nbsp;<span class="secondary">项目所产生的产品的类型。如果尚未确定，请选择 TBD。</span><div class="sep10"></div></li><li><strong>方案定义</strong> &nbsp;<span class="secondary">项目的成功，需要一个清晰的方案定义（Solution Definition）。项目究竟打算为谁解决什么问题，请用一句话清晰描述。很多时候，也就是创业公司的 Mission Statement。请一定花时间细细打磨你的方案定义。</span></li></ul>
+
+	                </div>
+	            </td>
+
+	
+</table></div>
 
 </div>
-
-<input type="button" class="super normal button" value="新建" onclick="location.href='/admin/post/new'" /><div class="sep5"></div>
-<div class="sep10"></div>
 
 
                 </div>

@@ -18,10 +18,11 @@ get '/' do
   erb :index
 end
 
-post '/' do
+post '/admin' do
   @post = Posts.new do |p|
     p.title = params[:title]
     p.content = params[:content]
+    p.pic = params[:pic]
     p.video = params[:video]
     p.cats_id = params[:cats_id]
   end
@@ -33,9 +34,14 @@ post '/' do
 end
 
 get '/admin' do
-  @apply = Applicants.all
-  
+  @post = Posts.all
   erb :admin
+end
+
+get '/admin/:model/:action' do
+  if params[:model] == "post" || params[:action] == "new"
+    erb :admin_post_new
+  end
 end
 
 get '/post/:id' do

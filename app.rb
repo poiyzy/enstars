@@ -33,7 +33,9 @@ post '/' do
 end
 
 get '/admin' do
-  haml :admin
+  @apply = Applicants.all
+  
+  erb :admin
 end
 
 get '/post/:id' do
@@ -59,4 +61,10 @@ post '/apply' do
   
   redirect "/"
   
+end
+
+get '/apply/admin' do
+  @apply = Applicants.all
+  
+  erb :applyadmin
 end

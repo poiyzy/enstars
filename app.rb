@@ -50,7 +50,7 @@ get '/post/:id' do
 end
 
 get '/apply' do
-  haml :apply
+  erb :apply
 end
 
 post '/apply' do

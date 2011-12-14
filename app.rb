@@ -61,6 +61,11 @@ post '/apply' do
     a.school = params[:school]
     a.grate = params[:grate]
     a.sex = params[:sex]
+    a.tel = params[:tel]
+    a.address = params[:address]
+    a.birth = params[:birth]
+    a.idcard = params[:idcard]
+    a.pname = params[:pname]
   end
   
   @apply.save!
